@@ -228,13 +228,17 @@
 
 
                     </div>
-                    <!--
-                    <div class="col-md-6" id="frame" style="visibility: hidden">
+                    
+                    <div class="col-md-6" id="frame" style="visibility: hidden; text-align: center;">
                         <div class="header">
-                            <h1>Last, First</h1> 
+                            <h1 id="name"></h1> 
+                            
                         </div>
+                        <img src="../images/profile.png">
+                        <img id="status">
+                        <h3 id="contact">></h3>
                     </div>
--->
+
 
                     <script>
                         var database = firebase.database();
@@ -254,6 +258,8 @@
                                         if (status == 0) {
                                             // Neutral
                                             content += '<td><div class="circle_grey"></div></td>';
+//                                            $('#status').empty();
+//                                            $('#status').append(class="circle_grey")
                                         } else if (status == 1) {
                                             // Green
                                             content += '<td><div class="circle_green"></div></td>';
@@ -281,12 +287,20 @@
                                                     if (val.key == pid) {
                                                         lname = val.lastname;
                                                         fname = val.firstname;
+                                                        $('#name').empty();
+                                                        $('#name').append(lname + ", " + fname);
                                                         pnum = val.phone;
-                                                        stat = status;
+                                                        email = val.email;
+                                                        $('#contact').empty();
+                                                        $('#contact').append("Contact information:<br/><br/>Phone: " + pnum + 
+                                                                             "<br/>Email: " + email);
+                                                        stat = val.status;
+                                                        
                                                     }
                                                 })
                                             }
                                         });
+                                        
                                         document.getElementById("frame").style.visibility = "visible";
                                     })
                                 });
