@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-    <link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'>
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
@@ -44,25 +44,26 @@
 <input type='Button' class="td-field" id='Submit' Value="Revove">
 
 <script>
-var myDataRef = new Firebase('https://teamnine-40084.firebaseio.com/');
 
-  $('.td-field').keypress(function (e) {
-      var name     = $('#nameInput').val();
-      var text     = $('#messageInput').val();
-      var category = $('#categoryInput').val();
-      var enabled  = $('#enabledInput').val();
-      var approved = $('#approvedInput').val();
-      myDataRef.push({name: name, text: text, category: category, enabled: enabled, approved: approved });
-      $('#messageInput').val('');
+var config = {
+    apiKey: "AIzaSyC8NkmJKsy_P4ERtWiBo_hnObKErwfAfpk",
+    authDomain: "teamnine-40084.firebaseapp.com",
+    databaseURL: "https://firebase.google.com/u/2/project/teamnine-40084/database/data",
+    storageBucket: "teamnine-40084.appspot.com",
+    messagingSenderId: "1056108808174",
+};
+
+firebase.initializeApp(config);
+
+function writeUserData() {
+    console.log("SUCCESS");
+  firebase.database().ref('/alerts').set({
+    alerts: "TEST ALERT"
   });
-  myDataRef.on('child_added', function(snapshot) {
-    var message = snapshot.val();
-    displayChatMessage(message.name, message.text, message.category, message.enabled, message.approved);
-  });
-  function displayChatMessage(name, text, category, enabled, approved, ) {
-    $('<div/>').text(text).prepend($('<em/>').text(name+' : '+category +' : '+enabled +' : '+approved+ ' : ' )).appendTo($('#messagesDiv'));
-    $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
-  };
+        console.log("SUCCESS");
+
+    writeUserData();
+};
 </script>
 
 </body>
