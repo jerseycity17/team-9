@@ -8,19 +8,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.mary.irc9.MainActivity">
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Emergency Alerts"/>
-
-    <Button
-
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="I'm safe" />
-
+    <ListView
+        android:id="@+id/notifs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>
