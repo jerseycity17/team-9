@@ -185,7 +185,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Personnel</h1>
-                    <div class="left" style="overflow-y: auto">
+                    <div class="col-md-6" style="overflow-y: auto">
                         <div class="search" style="text-align: center">
                             <input type="text" id="myInput" onkeyup="searchTable()" placeholder="Search personnel ">
                         </div>
@@ -406,12 +406,13 @@
 
                         </script>
                     </div>
-                    <div class="right" style="display: none" id="frame">
+                    <div class="col-md-6"  id="frame" style="visibility: hidden">
                         <iframe id="staff_data" src="staff_info.html" frameborder="0" width="100%" height="550px" class="myIframe"></iframe>
                     </div>
 
                     <script>
                         $("#personnelTable.tr").click(function() {
+                            console.log("table clicked");
                             document.getElementById("frame").style.visibility = "visible";
                         });
                     </script>
