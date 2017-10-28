@@ -99,29 +99,48 @@
                             </div>
                             <br>
                             <div class='Option'>
-                                <textarea name="Doc_notes" cols="42" rows="3" placeholder="Message"></textarea>
+                                <textarea id="emAlert" cols="42" rows="3" placeholder="Message"></textarea>
                             </div>
                             <input type="checkbox" id="requireReply" name="reply" value="replyReq">
                             <label for="requireReply">Require Response within 24 hours</label>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" onclick="sendSMS()" data-dismiss="modal" >Submit</button>
+                                <button type="button" class="btn btn-default" id="btnSubmit" data-dismiss="modal" >Submit</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- THIS IS AN AWFUL WAY TO DO THIS, THIS IS STRICTLY FOR DEMO PURPOSES
+              THIS IS A WORKAROUND TO NOT HAVING NODE FOR THE TWILIO API-->
         <script>
-            import twilio from 'twilio';
-            function sendSMS(){
-            
-            var client = new twilio('AC34c72a916433b623a7037872ede01d5f', '98d7d6f929f401a61fe20128e65765c4');
-            client.messages.create({
-                to: '+17706080735',
-                from: '+16787218440',
-                body: 'Hello'
+            $(document).ready(function() {
+                $("#btnSubmit").click(function(){
+                    // Your Twilio credentials
+                    var SID = "AC34c72a916433b623a7037872ede01d5f"
+                    var Key = "98d7d6f929f401a61fe20128e65765c4"
+
+                    $.ajax({
+                        type: 'POST',
+                        url: 'https://api.twilio.com/2010-04-01/Accounts/' + SID + '/Messages.json',
+                        data: {
+                            "To" : "+17706080735",
+                            "From" : "+16787218440",
+                            "Body" : $("#emAlert").val()
+                        },
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader ("Authorization", "Basic " + btoa(SID + ':' + Key));
+                        },
+                        success: function(data) {
+                            console.log(data);
+                        },
+                        error: function(data) {
+                            console.log(data);
+                        }
+                    });
+                });
             });
-            }
         </script>
         <script>
             $('#input-tags').selectize({
