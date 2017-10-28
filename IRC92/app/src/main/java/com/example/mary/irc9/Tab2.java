@@ -23,12 +23,14 @@ public class Tab2 extends Fragment {
     DatabaseReference myRef = database.getReference("personell");
 
     @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab2, container, false);
 
         String[] notifs = {"[local place] Police: 123-456-7890",
-                "[local place] Hospital: 123-456-7890", "IRC [place] Office Contact: 123-456-7890"};
+                "[local place] Hospital: 123-456-7890", "IRC [place] Office Contact: 123-456-7890",
+                "IRC Address: 123 easy street"};
 
         ListView lView = (ListView) rootView.findViewById(R.id.notifs);
 
