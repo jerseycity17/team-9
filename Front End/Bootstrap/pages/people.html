@@ -1,425 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="stylesheet" src="/../css/style.css">
-    <link rel="stylesheet" src="/../css/normalize.css">
-    <link rel="stylesheet" src="/../css/stylesheet.css">
-    <link rel="stylesheet" src="/src/css/selectize2.default.css">
-    <link href="../css/login_register.css" rel="stylesheet" type="text/css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="stylesheet" src="/../css/style.css">
+        <link rel="stylesheet" src="/../css/normalize.css">
+        <link rel="stylesheet" src="/../css/stylesheet.css">
+        <link rel="stylesheet" src="/src/css/selectize2.default.css">
+        <link href="../css/login_register.css" rel="stylesheet" type="text/css">
 
-    <title>People</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <title>People</title>
 
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+        <!-- Bootstrap Core CSS -->
+        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+        <!-- MetisMenu CSS -->
+        <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- Custom CSS -->
+        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-    <link rel="icon" href="../favicon-16x16.png">
+        <link rel="icon" href="../favicon-16x16.png">
 
-    <style>
-        .circle_green {
-            border: 2px solid #a1a1a1;
-            padding: 10px 11px;
-            background: green;
-            width: 2px;
-            border-radius: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            width: 1%;
-        }
+        <style>
+            .circle_green {
+                border: 2px solid #a1a1a1;
+                padding: 10px 11px;
+                background: green;
+                width: 2px;
+                border-radius: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                width: 1%;
+            }
 
-        .circle_red {
-            border: 2px solid #a1a1a1;
-            padding: 10px 11px;
-            background: red;
-            width: 2px;
-            border-radius: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            width: 1%;
-        }
+            .circle_red {
+                border: 2px solid #a1a1a1;
+                padding: 10px 11px;
+                background: red;
+                width: 2px;
+                border-radius: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                width: 1%;
+            }
 
-        table {
-            width: 640px;
-            border-collapse: collapse;
-            border-spacing: 0;
-            color: #333;
+            table {
+                width: 640px;
+                border-collapse: collapse;
+                border-spacing: 0;
+                color: #333;
 
-        }
+            }
 
-        td,
-        th {
-            border: 1px solid transparent;
-            text-align: center;
-            height: 30px;
-            transition: all 0.3s;
-        }
+            td,
+            th {
+                border: 1px solid transparent;
+                text-align: center;
+                height: 30px;
+                transition: all 0.3s;
+            }
 
-        th {
-            background: #fcc513;
-            font-weight: bold;
-        }
+            th {
+                background: #fcc513;
+                font-weight: bold;
+            }
 
-        td {
-            background: #FAFAFA;
-            text-align: center;
-        }
+            td {
+                background: #FAFAFA;
+                text-align: center;
+            }
 
-        tr:nth-child(even) td {
-            background: #F1F1F1;
-        }
+            tr:nth-child(even) td {
+                background: #F1F1F1;
+            }
 
-        tr:nth-child(odd) td {
-            background: #FEFEFE;
-        }
+            tr:nth-child(odd) td {
+                background: #FEFEFE;
+            }
 
-        tr:hover {
-            background-color: #f5f5f5
-        }
+            tr:hover {
+                background-color: #f5f5f5
+            }
 
-        .search {
-            padding-bottom: 20px;
-        }
+            .search {
+                padding-bottom: 20px;
+            }
 
-        input {
-            border-radius: 10px;
-        }
+            input {
+                border-radius: 10px;
+            }
 
-        .navbar {
-            background-color: #fcc513;
-        }
+            .navbar {
+                background-color: #fcc513;
+            }
 
-        .left {
-            float: left;
-            width: 50%;
-        }
+            .left {
+                float: left;
+                width: 50%;
+            }
 
-        .right {
-            float: right;
-            width: 50%;
-            padding-top: 64px;
-        }
+            .right {
+                float: right;
+                width: 50%;
+                padding-top: 64px;
+            }
 
-    </style>
+        </style>
 
-</head>
+    </head>
 
-<body>
-    <div id="wrapper">
+    <body>
+        <div id="wrapper">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">
-                    <font color="black">International Rescue Committee</font>
-                </a>
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <font color="black">International Rescue Committee</font>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="dashboard.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="people.html"><i class="fa fa-user fa-fw"></i>People</a>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="info.html"><i class="fa fa-info fa-fw"></i>Country Information</a>
-                        </li>
-                    </ul>
                 </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-        </nav>
+                <!-- /.navbar-header -->
+
+                <ul class="nav navbar-top-links navbar-right">
 
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Personnel</h1>
-                    <div class="left" style="overflow-y: auto">
-                        <div class="search" style="text-align: center">
-                            <input type="text" id="myInput" onkeyup="searchTable()" placeholder="Search personnel ">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+                <!-- /.navbar-top-links -->
+
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li>
+                                <a href="dashboard.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="people.html"><i class="fa fa-user fa-fw"></i>People</a>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="info.html"><i class="fa fa-info fa-fw"></i>Country Information</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
+                </div>
+            </nav>
+
+
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Personnel</h1>
+                        <div class="left" style="overflow-y: auto">
+                            <div class="search" style="text-align: center">
+                                <input type="text" id="myInput" onkeyup="searchTable()" placeholder="Search personnel ">
+                            </div>
+
+                            <table align="center" style="text-align: center" border="1" id="personnelTable">
+                                <tr onClick>
+                                    <th onclick="sortTable(0)">Last Name</th>
+                                    <th>First Name</th>
+                                    <th>Phone Number</th>
+                                    <th onclick="sortTable(1)">Status</th>
+                                </tr>
+                                <tr>
+                                    <td onclick="myFunction()">amith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_red"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>bmith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                    <td>123-456-7890</td>
+                                    <td>
+                                        <div class="circle_green"></div>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <script>
+                                function sortTable(n) {
+                                    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                                    table = document.getElementById("personnelTable");
+                                    switching = true;
+                                    // Set the sorting direction to ascending:
+                                    dir = "asc";
+                                    /* Make a loop that will continue until
+                                no switching has been done: */
+                                    while (switching) {
+                                        // Start by saying: no switching is done:
+                                        switching = false;
+                                        rows = table.getElementsByTagName("TR");
+                                        /* Loop through all table rows (except the
+                                    first, which contains table headers): */
+                                        for (i = 1; i < (rows.length - 1); i++) {
+                                            // Start by saying there should be no switching:
+                                            shouldSwitch = false;
+                                            /* Get the two elements you want to compare,
+                                        one from current row and one from the next: */
+                                            x = rows[i].getElementsByTagName("TD")[n];
+                                            y = rows[i + 1].getElementsByTagName("TD")[n];
+                                            /* Check if the two rows should switch place,
+                                        based on the direction, asc or desc: */
+                                            if (dir == "asc") {
+                                                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                                    // If so, mark as a switch and break the loop:
+                                                    shouldSwitch = true;
+                                                    break;
+                                                }
+                                            } else if (dir == "desc") {
+                                                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                                    // If so, mark as a switch and break the loop:
+                                                    shouldSwitch = true;
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        if (shouldSwitch) {
+                                            /* If a switch has been marked, make the switch
+                                        and mark that a switch has been done: */
+                                            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                                            switching = true;
+                                            // Each time a switch is done, increase this count by 1:
+                                            switchcount++;
+                                        } else {
+                                            /* If no switching has been done AND the direction is "asc",
+                                        set the direction to "desc" and run the while loop again. */
+                                            if (switchcount == 0 && dir == "asc") {
+                                                dir = "desc";
+                                                switching = true;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                function searchTable() {
+                                    // Declare variables 
+                                    var input, filter, table, tr, td, i;
+                                    input = document.getElementById("myInput");
+                                    filter = input.value.toUpperCase();
+                                    table = document.getElementById("personnelTable");
+                                    tr = table.getElementsByTagName("tr");
+
+                                    // Loop through all table rows, and hide those who don't match the search query
+                                    for (i = 0; i < tr.length; i++) {
+                                        td = tr[i].getElementsByTagName("td")[0];
+                                        if (td) {
+                                            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                                tr[i].style.display = "";
+                                            } else {
+                                                tr[i].style.display = "none";
+                                            }
+                                        }
+                                    }
+                                }
+
+                            </script>
+                        </div>
+                        <div class="right" style="display: none" id="frame">
+                            <iframe id="staff_data" src="staff_info.html" frameborder="0" width="100%" height="550px" class="myIframe"></iframe>
                         </div>
 
-                        <table align="center" style="text-align: center" border="1" id="personnelTable">
-                            <tr onClick>
-                                <th onclick="sortTable(0)">Last Name</th>
-                                <th>First Name</th>
-                                <th>Phone Number</th>
-                                <th onclick="sortTable(1)">Status</th>
-                            </tr>
-                            <tr>
-                                <td>amith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_red"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>bmith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Smith</td>
-                                <td>John</td>
-                                <td>123-456-7890</td>
-                                <td>
-                                    <div class="circle_green"></div>
-                                </td>
-                            </tr>
-
-                        </table>
                         <script>
-                            function sortTable(n) {
-                                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-                                table = document.getElementById("personnelTable");
-                                switching = true;
-                                // Set the sorting direction to ascending:
-                                dir = "asc";
-                                /* Make a loop that will continue until
-                                no switching has been done: */
-                                while (switching) {
-                                    // Start by saying: no switching is done:
-                                    switching = false;
-                                    rows = table.getElementsByTagName("TR");
-                                    /* Loop through all table rows (except the
-                                    first, which contains table headers): */
-                                    for (i = 1; i < (rows.length - 1); i++) {
-                                        // Start by saying there should be no switching:
-                                        shouldSwitch = false;
-                                        /* Get the two elements you want to compare,
-                                        one from current row and one from the next: */
-                                        x = rows[i].getElementsByTagName("TD")[n];
-                                        y = rows[i + 1].getElementsByTagName("TD")[n];
-                                        /* Check if the two rows should switch place,
-                                        based on the direction, asc or desc: */
-                                        if (dir == "asc") {
-                                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                                                // If so, mark as a switch and break the loop:
-                                                shouldSwitch = true;
-                                                break;
-                                            }
-                                        } else if (dir == "desc") {
-                                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                                                // If so, mark as a switch and break the loop:
-                                                shouldSwitch = true;
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    if (shouldSwitch) {
-                                        /* If a switch has been marked, make the switch
-                                        and mark that a switch has been done: */
-                                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                                        switching = true;
-                                        // Each time a switch is done, increase this count by 1:
-                                        switchcount++;
-                                    } else {
-                                        /* If no switching has been done AND the direction is "asc",
-                                        set the direction to "desc" and run the while loop again. */
-                                        if (switchcount == 0 && dir == "asc") {
-                                            dir = "desc";
-                                            switching = true;
-                                        }
-                                    }
+                            function myFunction() {
+                                var x = document.getElementById("frame");
+                                if (x.style.display === "none") {
+                                    x.style.display = "block";
+                                } else {
+                                    x.style.display = "none";
                                 }
                             }
-
-                            function searchTable() {
-                                // Declare variables 
-                                var input, filter, table, tr, td, i;
-                                input = document.getElementById("myInput");
-                                filter = input.value.toUpperCase();
-                                table = document.getElementById("personnelTable");
-                                tr = table.getElementsByTagName("tr");
-
-                                // Loop through all table rows, and hide those who don't match the search query
-                                for (i = 0; i < tr.length; i++) {
-                                    td = tr[i].getElementsByTagName("td")[0];
-                                    if (td) {
-                                        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                                            tr[i].style.display = "";
-                                        } else {
-                                            tr[i].style.display = "none";
-                                        }
-                                    }
-                                }
-                            }
-
                         </script>
                     </div>
-                    <div class="right" style="display: none" id="frame">
-                        <iframe id="staff_data" src="staff_info.html" frameborder="0" width="100%" height="550px" class="myIframe"></iframe>
-                    </div>
-
-                    <script>
-                        $("#personnelTable.tr").click(function() {
-                            document.getElementById("frame").style.visibility = "visible";
-                        });
-                    </script>
                 </div>
             </div>
-        </div>
 
-    </div>
-</body>
+        </div>
+    </body>
 
 </html>
