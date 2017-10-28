@@ -30,8 +30,8 @@ public class Tab1 extends Fragment{
 
         customsListView.setAdapter(customsViewAdapter);
 
-        String[] healthList = {"Women should not go out alone at night past 9PM",
-                "Custom 2", "Custom 3"};
+        String[] healthList = {"Zika virus is active here",
+                "Health Advisory 2", "Health Advisory 3"};
 
         ListView healthListView = (ListView) rootView.findViewById(R.id.healthAdvisories);
 
