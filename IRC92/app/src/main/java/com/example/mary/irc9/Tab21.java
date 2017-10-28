@@ -22,13 +22,13 @@ import java.util.UUID;
 
 import static android.R.id.list;
 
-public class Tab2 extends Fragment {
+public class Tab21 extends Fragment {
 
     ArrayList<String> list = new ArrayList<>();
 
     final FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference dbRef = db.getReference();
-    DatabaseReference mNotifReference = dbRef.child("briefing");
+    DatabaseReference mNotifReference = dbRef.child("testUser");
 
 
     ArrayAdapter<String> adapter;
@@ -36,18 +36,21 @@ public class Tab2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab2, container, false);
+        View rootView = inflater.inflate(R.layout.tab21, container, false);
 
 
         ValueEventListener postListenter = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 list.clear();
+
                 for(DataSnapshot snap : dataSnapshot.getChildren()){
                     String a = snap.getValue(String.class);
                     //System.out.println(a);
                     list.add(a);
                 }
+
+
             }
 
             @Override
@@ -58,7 +61,7 @@ public class Tab2 extends Fragment {
 
         mNotifReference.addValueEventListener(postListenter);
 
-        ListView lView = (ListView) rootView.findViewById(R.id.middle);
+        ListView lView = (ListView) rootView.findViewById(R.id.dummy);
 
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
 

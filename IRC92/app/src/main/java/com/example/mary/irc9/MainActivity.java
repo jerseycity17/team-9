@@ -126,6 +126,9 @@ public class MainActivity extends AppCompatActivity {
                 case 2:
                     Tab3 t3 = new Tab3();
                     return t3;
+                case 3:
+                    Tab21 t4 = new Tab21();
+                    return t4;
                 default:
                     return null;
             }
@@ -134,18 +137,20 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Briefing";
-                case 1:
                     return "Contacts";
+                case 1:
+                    return "Briefing";
                 case 2:
                     return "Alerts";
+                case 3:
+                    return "Your Profile";
             }
             return null;
         }
