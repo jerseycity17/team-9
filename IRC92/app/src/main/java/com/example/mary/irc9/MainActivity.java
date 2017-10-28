@@ -49,9 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
+        //launches the login page
         startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().setIsSmartLockEnabled(false).setProviders(AuthUI.GOOGLE_PROVIDER).build(),RC_SIGN_IN);
-
-
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
