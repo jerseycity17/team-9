@@ -27,5 +27,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="I'm safe" />
+    <ListView
+        android:id="@+id/notifs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
+        android:layout_below="@+id/country" />
 </RelativeLayout>
