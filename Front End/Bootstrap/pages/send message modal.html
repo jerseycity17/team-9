@@ -29,47 +29,15 @@
     </head>
     <body>
 
-        <h3 align="center">Agent Locations</h3>
-        <div id="map"></div>
-        <script>
-            function initMap() {
-                var point1 = {lat: 34.8021, lng: 38.9968};
-                var point2 = {lat: 33.5021, lng: 35.68};
-                var point3 = {lat: 35.21, lng: 39.5};
-                var point4 = {lat: 37.1, lng: 33.3};
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 4,
-                    center: point1
-                });
-                var marker = new google.maps.Marker({
-                    position: point1,
-                    map: map,
-                    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-                });
-                var marker2 = new google.maps.Marker({
-                    position: point2,
-                    map: map,
-                    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                });
-                var marker3 = new google.maps.Marker({
-                    position: point3,
-                    map: map,
-                    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                });
-                var marker4 = new google.maps.Marker({
-                    position: point4,
-                    map: map,
-                    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                });
-            }
-        </script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANdAC0Pur1hpkiwj7q6gm1Jy7HRuxQdtg&callback=initMap">
-        </script>
-
         <div class="container" align="center">
             <h2>Active Alerts</h2>
             <div class="boxed">
+                <div class="boxed">
+                    <p class="message">Active shooter spotted in central Syria, stay clear and be alert.</p>
+                    <p class="author"><font color="grey">Hunter Bartholomew</font></p>
+                    <p class="timestamp"><font color="grey">10/28/2017 18:37 GMT</font></p>
+                </div>
+                <br>
                 <div class="boxed">
                     <p class="message">Active shooter spotted in central Syria, stay clear and be alert.</p>
                     <p class="author"><font color="grey">Hunter Bartholomew</font></p>
@@ -79,8 +47,8 @@
             </div>
         </div>
 
+        <br>        
         <div class="container" align="center">
-            <h2>Emergency Alert</h2>
             <!-- Trigger the modal with a button -->
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">New Alert</button>
             <!-- Modal -->
