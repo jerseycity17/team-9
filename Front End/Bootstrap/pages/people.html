@@ -8,7 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" src="/src/css/style.css">
+    <link rel="stylesheet" src="/../css/style.css">
+    <link rel="stylesheet" src="/../css/normalize.css">
+    <link rel="stylesheet" src="/../css/stylesheet.css">
+    <link rel="stylesheet" src="/src/css/selectize2.default.css">
+    <link href="../css/login_register.css" rel="stylesheet" type="text/css">
 
     <title>People</title>
 
@@ -24,7 +28,7 @@
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <link href="../css/login_register.css" rel="stylesheet" type="text/css">
+    
     <link rel="icon" href="../favicon-16x16.png">
 
     <style>
@@ -49,17 +53,56 @@
             margin-right: auto;
             width: 1%;
         }
-        
-        table { 
+
+        table {
             width: 640px;
             border-collapse: collapse;
             border-spacing: 0;
-                        
+            color: #333;
+
+        }
+
+        td,
+        th {
+            border: 1px solid transparent;
+            text-align: center;
+            height: 30px;
+            transition: all 0.3s;
+        }
+
+        th {
+            background: #fcc513;
+            font-weight: bold;
+        }
+
+        td {
+            background: #FAFAFA;
+            text-align: center;
+        }
+
+        tr:nth-child(even) td {
+            background: #F1F1F1;
+        }
+
+        tr:nth-child(odd) td {
+            background: #FEFEFE;
+        }
+
+        tr:hover {
+            background: #f5f5f5
+        }
+
+        .search {
+            padding-bottom: 20px;
+        }
+
+        input {
+            border-radius: 10px;
         }
         
-        td, th {
-            border: 1px solid #CCC;
-            text-align: center;
+        .navbar-header {
+            background-color: #fcc513;
+            color: black;
         }
 
     </style>
@@ -78,7 +121,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">International Rescue Committee</a>
+                <a class="navbar-brand" href="index.html"><font color="black">International Rescue Committee</font></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -87,7 +130,7 @@
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -128,7 +171,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Personnel</h1>
-                    <table align="center" style="text-align: center" border="1" id="personelTable">
+                    <div class="search" style="text-align: center">
+                        <input type="text" id="myInput" onkeyup="searchTable()" placeholder="Search personnel ">
+                    </div>
+
+                    <table align="center" style="text-align: center" border="1" id="personnelTable">
                         <tr>
                             <th onclick="sortTable(0)">Last Name</th>
                             <th>First Name</th>
@@ -136,7 +183,7 @@
                             <th onclick="sortTable(1)">Status</th>
                         </tr>
                         <tr>
-                            <td>Smith</td>
+                            <td>amith</td>
                             <td>John</td>
                             <td>123-456-7890</td>
                             <td>
@@ -224,7 +271,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Smith</td>
+                            <td>bmith</td>
                             <td>John</td>
                             <td>123-456-7890</td>
                             <td>
@@ -265,6 +312,84 @@
                         </tr>
 
                     </table>
+                    <script>
+                        function sortTable(n) {
+                            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                            table = document.getElementById("personnelTable");
+                            switching = true;
+                            // Set the sorting direction to ascending:
+                            dir = "asc";
+                            /* Make a loop that will continue until
+                            no switching has been done: */
+                            while (switching) {
+                                // Start by saying: no switching is done:
+                                switching = false;
+                                rows = table.getElementsByTagName("TR");
+                                /* Loop through all table rows (except the
+                                first, which contains table headers): */
+                                for (i = 1; i < (rows.length - 1); i++) {
+                                    // Start by saying there should be no switching:
+                                    shouldSwitch = false;
+                                    /* Get the two elements you want to compare,
+                                    one from current row and one from the next: */
+                                    x = rows[i].getElementsByTagName("TD")[n];
+                                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                                    /* Check if the two rows should switch place,
+                                    based on the direction, asc or desc: */
+                                    if (dir == "asc") {
+                                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                            // If so, mark as a switch and break the loop:
+                                            shouldSwitch = true;
+                                            break;
+                                        }
+                                    } else if (dir == "desc") {
+                                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                            // If so, mark as a switch and break the loop:
+                                            shouldSwitch = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if (shouldSwitch) {
+                                    /* If a switch has been marked, make the switch
+                                    and mark that a switch has been done: */
+                                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                                    switching = true;
+                                    // Each time a switch is done, increase this count by 1:
+                                    switchcount++;
+                                } else {
+                                    /* If no switching has been done AND the direction is "asc",
+                                    set the direction to "desc" and run the while loop again. */
+                                    if (switchcount == 0 && dir == "asc") {
+                                        dir = "desc";
+                                        switching = true;
+                                    }
+                                }
+                            }
+                        }
+
+                        function searchTable() {
+                            // Declare variables 
+                            var input, filter, table, tr, td, i;
+                            input = document.getElementById("myInput");
+                            filter = input.value.toUpperCase();
+                            table = document.getElementById("personnelTable");
+                            tr = table.getElementsByTagName("tr");
+
+                            // Loop through all table rows, and hide those who don't match the search query
+                            for (i = 0; i < tr.length; i++) {
+                                td = tr[i].getElementsByTagName("td")[0];
+                                if (td) {
+                                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                        tr[i].style.display = "";
+                                    } else {
+                                        tr[i].style.display = "none";
+                                    }
+                                }
+                            }
+                        }
+
+                    </script>
                 </div>
             </div>
         </div>
