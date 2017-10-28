@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1056108808174",
+    "firebase_url": "https://teamnine-40084.firebaseio.com",
+    "project_id": "teamnine-40084",
+    "storage_bucket": "teamnine-40084.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056108808174:android:a98e84269d6e4851",
+        "android_client_info": {
+          "package_name": "com.example.mary.irc9"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056108808174-asgd0dn0i5jcia7jod64rmlq5eqd6ljr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mary.irc9",
+            "certificate_hash": "35bbca1a2777995347ff2bba4eacb7f4ec7473b9"
+          }
+        },
+        {
+          "client_id": "1056108808174-2fcu674sbfgv3fjak7hrmk0c0u6ruvhc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mary.irc9",
+            "certificate_hash": "438a7435095e915d244a28c563b54b4ad5823867"
+          }
+        },
+        {
+          "client_id": "1056108808174-4v7mn1h4crh0hsk0q3fsplbik936cf64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5MuQFyoVyBEzBQgzbBQ412J7a8z7-dY8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056108808174-4v7mn1h4crh0hsk0q3fsplbik936cf64.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
