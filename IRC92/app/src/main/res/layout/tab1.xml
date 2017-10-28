@@ -13,7 +13,6 @@
         android:id="@+id/customsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Customs"
         android:textColor="@color/black"
         android:textSize="20dp"/>
 
@@ -24,7 +23,7 @@
         android:layout_below="@+id/customsHeader"
         android:layout_alignParentStart="true" />
 
-
+<!--
     <TextView
         android:id="@+id/healthHeader"
         android:layout_width="wrap_content"
@@ -39,6 +38,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/healthHeader"/>
-
+-->
 
 </RelativeLayout>

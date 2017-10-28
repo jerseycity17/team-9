@@ -47,7 +47,7 @@ public class Tab3 extends Fragment {
                 list.clear();
                 for(DataSnapshot snap : dataSnapshot.getChildren()){
                     String a = snap.getValue(String.class);
-                    System.out.println(a);
+                    //System.out.println(a);
                     list.add(a);
                 }
             }
