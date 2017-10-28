@@ -7,7 +7,7 @@ usersApp.controller('usersListCrtl', function ($scope, $http) {
             "user_id": "hbarthol@stevens.edu",
             "password": "12345",
             "create_date": "3/25/2017",
-            "name": "Hunter Bartholomew",
+            "name": "Central Syria",
             "age": 20
         };
         
