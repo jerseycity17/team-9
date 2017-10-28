@@ -8,9 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-/**
- * Created by Mary on 10/28/17.
- */
 
 public class Tab3 extends Fragment {
 
