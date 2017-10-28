@@ -1,204 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="stylesheet" src="/../css/style.css">
-    <link rel="stylesheet" src="/../css/normalize.css">
-    <link rel="stylesheet" src="/../css/stylesheet.css">
-    <link rel="stylesheet" src="/src/css/selectize2.default.css">
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/standalone/selectize.js"></script>
-    <script src="../js/plugin.js"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="stylesheet" src="/../css/style.css">
+        <link rel="stylesheet" src="/../css/normalize.css">
+        <link rel="stylesheet" src="/../css/stylesheet.css">
+        <link rel="stylesheet" src="/src/css/selectize2.default.css">
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/standalone/selectize.js"></script>
+        <script src="../js/plugin.js"></script>
 
-    <title>IRC Admin Dashboard</title>
+        <title>IRC Admin Dashboard</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Core CSS -->
+        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+        <!-- MetisMenu CSS -->
+        <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+        <!-- Morris Charts CSS -->
+        <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- Custom Fonts -->
+        <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <link rel="icon" href="../favicon-16x16.png">
+        <link rel="icon" href="../favicon-16x16.png">
 
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
+        <style>
+            #map {
+                height: 400px;
+                width: 100%;
+            }
 
-        .navbar {
-            background-color: #fcc513;
-        }
+            .navbar {
+                background-color: #fcc513;
+            }
 
-    </style>
+        </style>
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                <a class="navbar-brand" href="index.html"><font color="black">International Rescue Committee</font></a>
-            </div>
-            <!-- /.navbar-header -->
+                    <a class="navbar-brand" href="index.html"><font color="black">International Rescue Committee</font></a>
+                </div>
+                <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
+                <ul class="nav navbar-top-links navbar-right">
 
 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                         </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+                <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="dashboard.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="people.html"><i class="fa fa-user fa-fw"></i>People</a>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="info.html"><i class="fa fa-info fa-fw"></i>Country Information</a>
-                        </li>
-                    </ul>
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li>
+                                <a href="dashboard.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="people.html"><i class="fa fa-user fa-fw"></i>People</a>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <li>
+                                <a href="info.html"><i class="fa fa-info fa-fw"></i>Country Information</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar-collapse -->
                 </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-        <div id="page-wrapper" ng-app="usersApp" ng-controller="usersListCrtl">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">{{user_name}}</h1>
-                    <h3 align="center">Agent Locations</h3>
-                    <div id="map"></div>
-                    <script>
-                        function initMap() {
-                            var point1 = {
-                                lat: 34.8021,
-                                lng: 38.9968
-                            };
-                            var point2 = {
-                                lat: 33.5021,
-                                lng: 35.68
-                            };
-                            var point3 = {
-                                lat: 35.21,
-                                lng: 39.5
-                            };
-                            var point4 = {
-                                lat: 37.1,
-                                lng: 33.3
-                            };
-                            var map = new google.maps.Map(document.getElementById('map'), {
-                                zoom: 4,
-                                center: point1
-                            });
-                            var marker = new google.maps.Marker({
-                                position: point1,
-                                map: map,
-                                icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-                            });
-                            var marker2 = new google.maps.Marker({
-                                position: point2,
-                                map: map,
-                                icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                            });
-                            var marker3 = new google.maps.Marker({
-                                position: point3,
-                                map: map,
-                                icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                            });
-                            var marker4 = new google.maps.Marker({
-                                position: point4,
-                                map: map,
-                                icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                            });
-                        }
+                <!-- /.navbar-static-side -->
+            </nav>
+            <div id="page-wrapper" ng-app="usersApp" ng-controller="usersListCrtl">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">{{user_name}}</h1>
+                        <h3 align="center">Agent Locations</h3>
+                        <div id="map"></div>
+                        <script>
+                            function initMap() {
+                                var point1 = {
+                                    lat: 34.8021,
+                                    lng: 38.9968
+                                };
+                                var point2 = {
+                                    lat: 33.5021,
+                                    lng: 35.68
+                                };
+                                var point3 = {
+                                    lat: 35.21,
+                                    lng: 39.5
+                                };
+                                var point4 = {
+                                    lat: 37.1,
+                                    lng: 33.3
+                                };
 
-                    </script>
-                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANdAC0Pur1hpkiwj7q6gm1Jy7HRuxQdtg&callback=initMap">
+                                var infowindow =  new google.maps.InfoWindow({
+                                    content: 'Hunter Bartholomew'
+                                });
+                                    var map = new google.maps.Map(document.getElementById('map'), {
+                                    zoom: 4,
+                                    center: point1
+                                });
+                                var marker = new google.maps.Marker({
+                                    position: point1,
+                                    map: map,
+                                    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                                });
+                                var marker2 = new google.maps.Marker({
+                                    position: point2,
+                                    map: map,
+                                    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                                });
+                                var marker3 = new google.maps.Marker({
+                                    position: point3,
+                                    map: map,
+                                    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                                });
+                                var marker4 = new google.maps.Marker({
+                                    position: point4,
+                                    map: map,
+                                    icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                                });
+                                marker.addListener('mouseover', function() {
+                                    infowindow.open(map, this);
+                                });
+
+                                marker.addListener('mouseout', function() {
+                                    infowindow.close();
+                                });
+                            }
+
+                        </script>
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANdAC0Pur1hpkiwj7q6gm1Jy7HRuxQdtg&callback=initMap">
 
 
-                    </script>
-                    <iframe src="send%20message%20modal.html" frameborder="0" width="100%" height="100%" class="myIframe">
+                        </script>
+                        <iframe src="send%20message%20modal.html" frameborder="0" width="100%" height="100%" class="myIframe">
                         </iframe>
 
-                    <script type="text/javascript" language="javascript">
-                        $('.myIframe').css('height', $(window).height() + 'px');
+                        <script type="text/javascript" language="javascript">
+                            $('.myIframe').css('height', $(window).height() + 'px');
 
-                    </script>
+                        </script>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- /#wrapper -->
+            <!-- /#wrapper -->
 
-        <!-- jQuery -->
-        <script src="../vendor/jquery/jquery.min.js"></script>
+            <!-- jQuery -->
+            <script src="../vendor/jquery/jquery.min.js"></script>
 
-        <!-- Angular JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+            <!-- Angular JS -->
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+            <!-- Metis Menu Plugin JavaScript -->
+            <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-        <!-- Morris Charts JavaScript -->
-        <script src="../vendor/raphael/raphael.min.js"></script>
-        <script src="../vendor/morrisjs/morris.min.js"></script>
-        <script src="../data/morris-data.js"></script>
+            <!-- Morris Charts JavaScript -->
+            <script src="../vendor/raphael/raphael.min.js"></script>
+            <script src="../vendor/morrisjs/morris.min.js"></script>
+            <script src="../data/morris-data.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="../dist/js/sb-admin-2.js"></script>
-        <script src="../js/dashboard_data.js"></script>
-        <!-- Flot Charts JavaScript -->
+            <!-- Custom Theme JavaScript -->
+            <script src="../dist/js/sb-admin-2.js"></script>
+            <script src="../js/dashboard_data.js"></script>
+            <!-- Flot Charts JavaScript -->
 
-        <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
-        <script src="../data/flot-data.js"></script>
+            <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+            <script src="../data/flot-data.js"></script>
 
-</body>
+            </body>
 
-</html>
+        </html>
