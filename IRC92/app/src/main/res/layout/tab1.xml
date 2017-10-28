@@ -8,10 +8,46 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.mary.irc9.MainActivity">
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Security Briefing"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true">
 
+        <RelativeLayout>
+
+            <TableRow
+                android:id="@+id/customsRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customs" />
+
+                <ListView
+                    android:id="@+id/customs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/customsRow">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Health Advisories" />
+
+                <ListView
+                    android:id="@+id/healthAdvisories"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </TableRow>
+        </RelativeLayout>
+    </TableLayout>
 </RelativeLayout>
