@@ -14,8 +14,6 @@
         <link rel="stylesheet" src="/src/css/selectize2.default.css">
         <script src="../js/jquery.min.js"></script>
         <script src="../js/standalone/selectize.js"></script>
-        <script src="../js/index.js"></script>
-
         <script src="../js/plugin.js"></script>
 
         <title>IRC Admin Dashboard</title>
@@ -47,7 +45,6 @@
     <body>
 
         <div id="wrapper">
-
             <!-- Navigation -->
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -107,125 +104,44 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">{{user_name}}</h1>
 
-                        <div id="map"></div>
-                        <script>
-                            function initMap() {
-                                var uluru = {lat: -25.363, lng: 131.044};
-                                var map = new google.maps.Map(document.getElementById('map'), {
-                                    zoom: 4,
-                                    center: uluru
-                                });
-                                var marker = new google.maps.Marker({
-                                    position: uluru,
-                                    map: map
-                                });
-                            }
+                        <iframe src="send%20message%20modal.html" width="80%" class="myIframe">
+                            <p>Hi SOF</p>
+                        </iframe>
+
+                        <script type="text/javascript" language="javascript"> 
+                            $('.myIframe').css('height', $(window).height()+'px');
                         </script>
-                        <script async defer
-                                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-                        </script>
-
-                        <div class="container">
-                            <!-- Trigger the modal with a button -->
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Send Alert</button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
-                                <div class="modal-dialog">
-                                    <!-- Modal content-->
-                                    <script>
-                                        $('#myModal').modal({
-                                            show: false,
-                                            backdrop: 'static',
-                                            keyboard: false
-                                        })
-                                    </script>
-                                    <div class="modal-content" >
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title" style="text-align: center">New Alert Message</h4>
-                                        </div>
-
-                                        <div class="modal-body">
-
-                                            <div class="demo">
-                                                <div class="control-group">
-                                                    <div class="headers">
-                                                        <label for="select-state">Choose Recipients</label>
-                                                    </div>
-                                                    <br>
-                                                    <select id="select-symptoms" name="symptoms[]" multiple class="demo-default" style="width: 300px" placeholder="Select symptoms...">
-                                                        <option value="">Select regions...</option>
-                                                        <option value = "Joint Pain">Northern Iraq</option>
-                                                        <option value = "Fatigue">Southern Irag</option>
-                                                        <option value = "Nasuea">Eastern Iran</option>
-                                                        <option value = "Swelling">Western Iran</option>
-                                                        <option value = "Cough">Sudan</option>
-                                                        <option value = "Arthritis">Syria</option>
-                                                    </select>
-                                                </div>
-                                                <script>
-                                                    $('#select-symptoms').selectize({
-                                                        maxItems: 50,
-                                                        plugins: {'item_color': {colorField: 'black'}}
-                                                    });
-                                                </script>
-                                            </div>
-                                            <br>
-
-                                            <div class="headers">
-                                                <label>Alert Message</label>
-                                            </div>
-                                            <br>
-                                            <div class='Option'>
-                                                <textarea name="Doc_notes" cols="42" rows="3" placeholder="Alert"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <script>
-                        $('#input-tags').selectize({
-                            persist: false,
-                            createOnBlur: true,
-                            create: true
-                        });
-                    </script>
                 </div>
             </div>
-        </div>
-        <!-- /#wrapper -->
+            <!-- /#wrapper -->
 
-        <!-- jQuery -->
-        <script src="../vendor/jquery/jquery.min.js"></script>
+            <!-- jQuery -->
+            <script src="../vendor/jquery/jquery.min.js"></script>
 
-        <!-- Angular JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+            <!-- Angular JS -->
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+            <!-- Metis Menu Plugin JavaScript -->
+            <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-        <!-- Morris Charts JavaScript -->
-        <script src="../vendor/raphael/raphael.min.js"></script>
-        <script src="../vendor/morrisjs/morris.min.js"></script>
-        <script src="../data/morris-data.js"></script>
+            <!-- Morris Charts JavaScript -->
+            <script src="../vendor/raphael/raphael.min.js"></script>
+            <script src="../vendor/morrisjs/morris.min.js"></script>
+            <script src="../data/morris-data.js"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="../dist/js/sb-admin-2.js"></script>
-        <script src="../js/dashboard_data.js"></script>
-        <!-- Flot Charts JavaScript -->
+            <!-- Custom Theme JavaScript -->
+            <script src="../dist/js/sb-admin-2.js"></script>
+            <script src="../js/dashboard_data.js"></script>
+            <!-- Flot Charts JavaScript -->
 
-        <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
-        <script src="../data/flot-data.js"></script>
+            <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+            <script src="../data/flot-data.js"></script>
 
-    </body>
+            </body>
 
-</html>
+        </html>
