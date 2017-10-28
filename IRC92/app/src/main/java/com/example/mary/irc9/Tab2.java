@@ -12,13 +12,13 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * Created by Mary on 10/28/17.
  */
-
+import java.util.UUID;
 
 public class Tab2 extends Fragment {
 
     // Write a message to the database
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("boo");
+    DatabaseReference myRef = database.getReference("personell");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,12 +27,16 @@ public class Tab2 extends Fragment {
 
 
 
-        myRef.setValue("Hello, World!");
+       // myRef.setValue("Jersey City");
+
+
+
         return rootView;
 
 
 
     }
+
 
 
 

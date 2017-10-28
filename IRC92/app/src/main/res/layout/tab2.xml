@@ -8,10 +8,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.mary.irc9.MainActivity">
 
+
     <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:textSize="60sp"
+        android:id="@+id/country"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contact Info"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Syria" />
+
 
 </RelativeLayout>
