@@ -131,8 +131,17 @@
                                     lng: 33.3
                                 };
 
-                                var infowindow =  new google.maps.InfoWindow({
+                                var infowindow1 =  new google.maps.InfoWindow({
                                     content: 'Hunter Bartholomew'
+                                });
+                                var infowindow2 =  new google.maps.InfoWindow({
+                                    content: 'Thomas Falsone'
+                                });
+                                var infowindow3 =  new google.maps.InfoWindow({
+                                    content: 'Chris LoPresti'
+                                });
+                                var infowindow4 =  new google.maps.InfoWindow({
+                                    content: 'Mary Yan'
                                 });
                                     var map = new google.maps.Map(document.getElementById('map'), {
                                     zoom: 4,
@@ -159,11 +168,32 @@
                                     icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
                                 });
                                 marker.addListener('mouseover', function() {
-                                    infowindow.open(map, this);
+                                    infowindow1.open(map, this);
                                 });
 
                                 marker.addListener('mouseout', function() {
-                                    infowindow.close();
+                                    infowindow1.close();
+                                });
+                                marker2.addListener('mouseover', function() {
+                                    infowindow2.open(map, this);
+                                });
+
+                                marker2.addListener('mouseout', function() {
+                                    infowindow2.close();
+                                });
+                                marker3.addListener('mouseover', function() {
+                                    infowindow3.open(map, this);
+                                });
+
+                                marker3.addListener('mouseout', function() {
+                                    infowindow3.close();
+                                });
+                                marker4.addListener('mouseover', function() {
+                                    infowindow4.open(map, this);
+                                });
+
+                                marker4.addListener('mouseout', function() {
+                                    infowindow4.close();
                                 });
                             }
 
