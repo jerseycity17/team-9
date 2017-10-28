@@ -36,19 +36,13 @@
 </head>
 <body>
 <div id='messagesDiv'></div>
-<input type='text' class="td-field" id='nameInput' placeholder='Name'>
-<input type='text' class="td-field" id='messageInput' placeholder='Message'>
-<input type='text' class="td-field" id='categoryInput' placeholder='Category'>
-<input type='text' class="td-field" id='enabledInput' placeholder='Enabled'>
-<input type='text' class="td-field" id='approvedInput' placeholder='Approved'>
-<input type='Button' class="td-field" id='Submit' Value="Revove">
 
 <script>
 
 var config = {
     apiKey: "AIzaSyC8NkmJKsy_P4ERtWiBo_hnObKErwfAfpk",
     authDomain: "teamnine-40084.firebaseapp.com",
-    databaseURL: "https://firebase.google.com/u/2/project/teamnine-40084/database/data",
+    databaseURL: "https://teamnine-40084.firebaseio.com",
     storageBucket: "teamnine-40084.appspot.com",
     messagingSenderId: "1056108808174",
 };
@@ -56,14 +50,15 @@ var config = {
 firebase.initializeApp(config);
 
 function writeUserData() {
-    console.log("SUCCESS");
-  firebase.database().ref('/alerts').set({
+  var user = firebase.auth().currentUser;
+  var usersRef = firebase.database().ref('/teamnine-40084');
+  usersRef.child("/alerts").set({
     alerts: "TEST ALERT"
   });
-        console.log("SUCCESS");
 
-    writeUserData();
 };
+        writeUserData();
+
 </script>
 
 </body>
