@@ -224,6 +224,7 @@
                                         var val = data.val();
                                         if (val.lastname != undefined) {
                                             content += '<tr id="' + val.key + '">';
+                                            console.log(val.key);
                                             content += '<td>' + val.lastname + '</td>';
                                             content += '<td>' + val.firstname + '</td>';
                                             content += '<td>' + val.phone + '</td>';
@@ -231,10 +232,13 @@
                                             content += '</tr>';
                                         }
                                     });
+                                    
                                     $('#personnelTable').append(content);
                                     $("#personnelTable tr").each(function(row) {
                                         $(this).click(function() {
-                                            console.log("ready");
+                                            var pid = ($(this).attr('id'));
+                                            
+                                            
                                             
                                             document.getElementById("frame").style.visibility = "visible";
                                         })
